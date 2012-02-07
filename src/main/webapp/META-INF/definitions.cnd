@@ -1,0 +1,20 @@
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+
+[jnt:qcmAnswer] > jnt:content
+ - label (string)
+ - goodAnswer (boolean) = false
+
+[jnt:qcmAnswersList] > jnt:content, jmix:list
+ orderable
+ + * (jnt:qcmAnswer) = jnt:qcmAnswer
+
+[jnt:qcmQuestion] > jnt:content
+ - question (string) mandatory
+ + answerslist (jnt:qcmAnswersList) = jnt:qcmAnswersList autocreated
+
+[jnt:qcm] > jnt:content, mix:title, jmix:socialComponent
+ - qcmFormName (string) mandatory
+ + * (jnt:qcmQuestion) = jnt:qcmQuestion
+
+
+
